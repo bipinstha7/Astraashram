@@ -18,8 +18,6 @@ export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMessage, dispatch] = useFormState<iResponse | void, FormData>(signIn, undefined);
 
-  console.dir({ errorMessage }, { depth: null });
-
   return (
     <form action={dispatch} className={authLayoutStyles.auth_form}>
       <section className={authLayoutStyles.input_wrapper}>
@@ -38,7 +36,11 @@ export default function SignInPage() {
         Forgot password?
       </Link>
       {errorMessage?.errors?.[0]?.message ? (
-        <InputError text={errorMessage.errors[0].message} margin="-16px 0 4px 0" />
+        <InputError
+          margin="-16px 0 4px 0"
+          data_testid="signin-error"
+          text={errorMessage.errors[0].message}
+        />
       ) : null}
       <Button text="Sign in" useFormStatusPending />
 
