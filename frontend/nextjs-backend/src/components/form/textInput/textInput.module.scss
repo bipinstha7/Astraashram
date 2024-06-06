@@ -1,0 +1,63 @@
+$input-padding: 16px;
+$input-border-width: 1px;
+
+.floating_label {
+  position: relative;
+}
+
+.floating_label input {
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  color: var(--primary-font-color);
+  border: $input-border-width solid transparent;
+  padding: 10px $input-padding 0 $input-padding;
+}
+
+.floating_label input::placeholder {
+  opacity: 0;
+}
+
+.floating_label label {
+  left: 0;
+  top: 10px;
+  font-size: 14px;
+  color: #9d9b9f;
+  position: absolute;
+  pointer-events: none;
+  padding: 0 $input-padding;
+  transition: 0.3s ease all;
+}
+
+.floating_label input:focus {
+  outline: none;
+  border: $input-border-width solid #014745;
+  transition: 0.5s ease-in-out all;
+  background-color: var(--background-color);
+}
+
+.floating_label .input_error,
+.floating_label input.input_error:focus {
+  border: $input-border-width solid var(--error-color);
+}
+
+.floating_label input:focus + label,
+.floating_label input:not(:placeholder-shown) + label {
+  font-size: 10px;
+  transform: translateY(-50%);
+}
+
+.floating_label.icon_input input {
+  padding-right: 40px;
+}
+
+.floating_label .icon {
+  top: 0;
+  right: 0;
+  position: absolute;
+  padding: 8px 16px 8px 0;
+  margin-left: 8px;
+  cursor: pointer;
+}

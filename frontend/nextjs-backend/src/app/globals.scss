@@ -77,16 +77,31 @@ h6 {
     'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono',
     'Courier New', monospace;
 
-  --font-color: 0, 0, 0;
-  --background-color: 255, 255, 255;
-  /* --background-start-rgb: 214, 219, 220; */
+  --primary-font-color: #2a2a2a;
+  --secondary-font-color: #ffffff;
+
+  --primary-bg-color: #014745;
+  --secondary-bg-color: #ac9b6d;
+  --inactive-bg-color: #d4d4d4;
+
+  --background-color: #ffffff;
+  --error-color: #eb5757;
+}
+
+body {
+  color: var(--primary-font-color);
+  background: var(--background-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --font-color: 255, 255, 255;
-    --background-color: 0, 0, 0;
-    /* --background-start-rgb: 0, 0, 0; */
+    --primary-font-color: #ffffff;
+    --secondary-font-color: #2a2a2a;
+    --background-color: #000000;
+  }
+
+  html {
+    color-scheme: dark;
   }
 }
 
@@ -96,19 +111,7 @@ body {
   overflow-x: hidden;
 } */
 
-/* body {
-  color: rgb(var(--font-color));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-color)))
-    rgb(var(--background-start-rgb));
-} */
-
 /* a {
   color: inherit;
   text-decoration: none;
-} */
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 } */

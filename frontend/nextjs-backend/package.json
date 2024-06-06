@@ -10,13 +10,21 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.5.0",
+    "@libsql/client": "^0.6.2",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.5",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.1",
     "@testing-library/react": "^15.0.7",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -24,6 +32,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "jsdom": "^24.1.0",
+    "sass": "^1.77.4",
     "typescript": "^5",
     "vitest": "^1.6.0"
   }

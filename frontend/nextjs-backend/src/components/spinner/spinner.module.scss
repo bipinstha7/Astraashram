@@ -1,0 +1,38 @@
+.spinner {
+  --spinner-width: 50px;
+  width: var(--spinner-width);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: px solid var(--background-color);
+  border-right-color: var(--secondary-bg-color);
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.spinner {
+  --spinner-width: 16px;
+  --spinner-padding: 2px;
+
+  width: var(--spinner-width);
+  padding: var(--spinner-padding);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--background-color);
+  --astrashram-spinner-mask: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--astrashram-spinner-mask);
+  mask: var(--astrashram-spinner-mask);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
