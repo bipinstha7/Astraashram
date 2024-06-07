@@ -1,10 +1,6 @@
 'use server';
 import { redirect } from 'next/navigation';
 
-import database from '../db';
-import { DASHBOARD_ROUTE } from '../constants';
-import { signInSchema, signUpSchema } from '../schemas/auth.schema';
-import { iResponse, iSignUp } from '../interfaces/auth.interface';
 import {
   signJWT,
   setCookie,
@@ -13,6 +9,10 @@ import {
   hashPassword,
   comparePassword,
 } from '../helper';
+import database from '../db';
+import { iResponse, iSignUp } from '../interfaces/auth.interface';
+import { signInSchema, signUpSchema } from '../schemas/auth.schema';
+import { DASHBOARD_ROUTE, SOMETHING_WENT_WRONG } from '../constants';
 
 export async function signIn(
   previousState: unknown,
@@ -56,7 +56,7 @@ export async function signIn(
     setCookie(token);
   } catch (error) {
     console.log({ signInError: error });
-    return customError('Something went wrong. Please try again later.');
+    return customError(SOMETHING_WENT_WRONG);
   }
 
   /* redirect internally throws an error so it should be called outside of try/catch blocks. */
@@ -107,7 +107,7 @@ export async function signUp(previousState: unknown, data: iSignUp): Promise<iRe
     setCookie(token);
   } catch (error) {
     console.log({ signUpError: error });
-    return customError('Something went wrong. Please try again later.');
+    return customError(SOMETHING_WENT_WRONG);
   }
 
   /* redirect internally throws an error so it should be called outside of try/catch blocks. */
