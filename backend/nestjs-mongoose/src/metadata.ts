@@ -1,0 +1,5 @@
+/* eslint-disable */
+export default async () => {
+    const t = {};
+    return { "@nestjs/swagger": { "models": [[import("./utils/dto/createUser.dto"), { "CreateUserDto": { name: { required: true, type: () => String, minLength: 5, maxLength: 50 }, email: { required: true, type: () => String, minLength: 8 }, password: { required: true, type: () => String, minLength: 8, pattern: "/^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$/" } } }], [import("./utils/dto/signinUser.dto"), { "SigninUserDto": { email: { required: true, type: () => String }, password: { required: true, type: () => String } } }]], "controllers": [[import("./app.controller"), { "AppController": { "getHello": { type: String } } }], [import("./modules/auth/auth.controller"), { "AuthController": { "signIn": {}, "signUp": {} } }], [import("./modules/users/users.controller"), { "UsersController": { "deleteAllUsers": { type: String } } }]] } };
+};
