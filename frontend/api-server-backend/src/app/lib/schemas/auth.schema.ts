@@ -2,7 +2,7 @@ import * as z from 'zod';
 
 export const signInSchema = z.object({
   email: z.string().trim().toLowerCase().email(),
-  password: z.string().trim(),
+  password: z.string().trim().min(1, { message: 'Password is required' }),
 });
 
 export const signUpSchema = z.object({
