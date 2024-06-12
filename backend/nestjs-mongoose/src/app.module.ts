@@ -7,9 +7,9 @@ import { AppService } from './app.service';
 import { AppController } from './app.controller';
 import { iEnvirontVariables, validate } from './config/config.validation';
 
-@Module({
-  imports: [
-    ...modules,
+const database = [];
+if (process.env.NODE_ENV !== 'test') {
+  database.push(
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService<iEnvirontVariables>) => ({
@@ -17,6 +17,13 @@ import { iEnvirontVariables, validate } from './config/config.validation';
       }),
       inject: [ConfigService],
     }),
+  );
+}
+
+@Module({
+  imports: [
+    ...modules,
+    ...database,
     ConfigModule.forRoot({
       validate,
       cache: true,

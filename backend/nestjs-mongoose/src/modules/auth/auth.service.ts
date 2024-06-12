@@ -49,10 +49,7 @@ export class AuthService {
       throw new UnauthorizedException('Invalid email or password');
     }
 
-    const passwordMatch = await comparePassword(
-      payload.password,
-      user.password,
-    );
+    const passwordMatch = await comparePassword(payload.password, user.password);
 
     if (!passwordMatch) {
       throw new UnauthorizedException('Invalid email or password');
