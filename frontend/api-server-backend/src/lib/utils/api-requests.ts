@@ -1,5 +1,5 @@
 import api from './baseApi';
-import { iAuthResponse } from '@/app/lib/interfaces/auth.interface';
+import { iAuthResponse } from '@/lib/interfaces/auth.interface';
 
 export async function signinUser(body: {
   email: string;

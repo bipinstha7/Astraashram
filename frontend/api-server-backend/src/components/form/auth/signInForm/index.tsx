@@ -8,7 +8,7 @@ import authStyles from '../auth.module.scss';
 import { iAuthFormProps } from '../auth.interface';
 import eyeOpenIcon from '/public/icons/eye-open.svg';
 import eyeCloseIcon from '/public/icons/eye-close.svg';
-import { iSignIn } from '@/app/lib/interfaces/auth.interface';
+import { iSignIn } from '@/lib/interfaces/auth.interface';
 
 export default function SignInForm(props: iAuthFormProps<iSignIn>) {
   const { errors, isSubmitting, register, customError } = props;

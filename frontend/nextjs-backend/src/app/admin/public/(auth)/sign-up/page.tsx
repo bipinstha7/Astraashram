@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { signUp } from '@/app/lib/actions/auth.actions';
+import { signUp } from '@/lib/actions/auth.actions';
 import SignUpForm from '@/components/form/auth/signUpForm';
-import { signUpSchema } from '@/app/lib/schemas/auth.schema';
-import { CUSTOM_ERROR, SOMETHING_WENT_WRONG } from '@/app/lib/constants';
-import { iResponse, iSignUp } from '@/app/lib/interfaces/auth.interface';
+import { signUpSchema } from '@/lib/schemas/auth.schema';
+import { CUSTOM_ERROR, SOMETHING_WENT_WRONG } from '@/lib/constants';
+import { iResponse, iSignUp } from '@/lib/interfaces/auth.interface';
 
 export default function SignUpPage() {
   const [customError, setCustomError] = useState('');

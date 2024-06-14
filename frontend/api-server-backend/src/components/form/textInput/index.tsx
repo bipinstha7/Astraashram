@@ -34,7 +34,7 @@ export default function TextInput(props: iTextInput) {
           </div>
         ) : null}
       </div>
-      {error ? <InputError text={error} /> : null}
+      {error ? <InputError text={error} data_testid={name} /> : null}
     </>
   );
 }

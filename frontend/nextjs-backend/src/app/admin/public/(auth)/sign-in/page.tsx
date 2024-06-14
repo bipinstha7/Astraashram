@@ -2,8 +2,8 @@
 
 import { useFormState } from 'react-dom';
 
-import { signIn } from '@/app/lib/actions/auth.actions';
-import { iResponse } from '@/app/lib/interfaces/auth.interface';
+import { signIn } from '@/lib/actions/auth.actions';
+import { iResponse } from '@/lib/interfaces/auth.interface';
 import SignInForm from '@/components/form/auth/signInForm';
 
 export default function SignInPage() {

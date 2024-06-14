@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import useAuth from '@/app/lib/hooks/auth.hooks';
+import useAuth from '@/lib/hooks/auth.hooks';
+import { VALIDATION_EXCEPTION } from '@/lib/constants';
+import { signUpSchema } from '@/lib/schemas/auth.schema';
+import { iSignUp } from '@/lib/interfaces/auth.interface';
 import SignUpForm from '@/components/form/auth/signUpForm';
-import { VALIDATION_EXCEPTION } from '@/app/lib/constants';
-import { signUpSchema } from '@/app/lib/schemas/auth.schema';
-import { iSignUp } from '@/app/lib/interfaces/auth.interface';
-import { iApiValidationError } from '@/utils/api-requests.interface';
+import { iApiValidationError } from '@/lib/utils/api-requests.interface';
 
 export default function SignUpPage() {
   const { signUp } = useAuth();

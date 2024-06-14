@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { DASHBOARD_ROUTE, PUBLIC_ROUTE_PREFIX } from './app/lib/constants';
+import { DASHBOARD_ROUTE, PUBLIC_ROUTE_PREFIX } from './lib/constants';
 
 export function middleware(request: NextRequest) {
   const authToken = request.cookies.get('access_token')?.value;

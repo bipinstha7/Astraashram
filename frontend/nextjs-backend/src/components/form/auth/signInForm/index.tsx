@@ -8,7 +8,7 @@ import InputError from '../../inputError';
 import authStyles from '../auth.module.scss';
 import eyeOpenIcon from '/public/icons/eye-open.svg';
 import eyeCloseIcon from '/public/icons/eye-close.svg';
-import { iResponse } from '@/app/lib/interfaces/auth.interface';
+import { iResponse } from '@/lib/interfaces/auth.interface';
 
 export default function SignInForm({ errorMessage }: { errorMessage: iResponse | void }) {
   const { pending } = useFormStatus();

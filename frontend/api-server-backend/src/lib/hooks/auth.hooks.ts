@@ -1,8 +1,9 @@
 import { useRouter } from 'next/navigation';
 
 import { setLocalStorage } from '../helper';
-import { signinUser, signupUser } from '@/utils/api-requests';
+import { signinUser, signupUser } from '@/lib/utils/api-requests';
 import { iAuthResponse, iSignIn, iSignUp } from '../interfaces/auth.interface';
+import { ASTRAASAN_DATA } from '../constants';
 
 export default function useAuth() {
   const router = useRouter();
@@ -10,7 +11,7 @@ export default function useAuth() {
   const signUp = async (data: iSignUp) => {
     const response: iAuthResponse = await signupUser(data);
 
-    await setLocalStorage({ name: 'astraasan_data', data: JSON.stringify(response) });
+    await setLocalStorage({ name: ASTRAASAN_DATA, data: JSON.stringify(response) });
 
     router.push('/admin/dashboard');
   };
@@ -18,7 +19,7 @@ export default function useAuth() {
   const signIn = async (data: iSignIn) => {
     const response: iAuthResponse = await signinUser(data);
 
-    await setLocalStorage({ name: 'astraasan_data', data: JSON.stringify(response) });
+    await setLocalStorage({ name: ASTRAASAN_DATA, data: JSON.stringify(response) });
 
     router.push('/admin/dashboard');
   };
