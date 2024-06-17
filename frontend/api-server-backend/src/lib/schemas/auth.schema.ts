@@ -20,7 +20,7 @@ export const signUpSchema = z.object({
   password: z
     .string()
     .trim()
-    .regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, {
+    .regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!.%*#?&])[A-Za-z\d@$!.%*#?&]{8,}$/, {
       message:
         'Must be at least 8 Characters with uppercase, lowercase, number and special characters',
     }),

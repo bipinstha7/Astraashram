@@ -1,23 +1,16 @@
 import { Module } from '@nestjs/common';
-import { MongooseModule } from '@nestjs/mongoose';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ConfigModule } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 import modules from './modules';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
-import { iEnvirontVariables, validate } from './config/config.validation';
+import { dbConfig } from './config/typeorm.config';
+import { validate } from './config/config.validation';
 
 const database = [];
 if (process.env.NODE_ENV !== 'test') {
-  database.push(
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      useFactory: async (configService: ConfigService<iEnvirontVariables>) => ({
-        uri: configService.get<string>('DB_URL'),
-      }),
-      inject: [ConfigService],
-    }),
-  );
+  database.push(TypeOrmModule.forRoot(dbConfig));
 }
 
 @Module({
