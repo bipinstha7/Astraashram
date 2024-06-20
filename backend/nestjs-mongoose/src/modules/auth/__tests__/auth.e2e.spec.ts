@@ -177,7 +177,6 @@ describe('Auth Route (e2e)', () => {
         mockFindOneLeanSelect({ model: userModel, data: { _id, name, ...payload } });
         (bcrypt.compare as jest.Mock) = jest.fn().mockResolvedValue(true);
 
-        mockCreate({ model: userModel, data: payload });
         const response = await request(server).post(route).send(payload);
 
         const userFind = (userModel.findOne as jest.Mock).mock;

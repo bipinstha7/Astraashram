@@ -9,7 +9,7 @@ import { comparePassword, hashPassword } from 'src/utils/helper';
 
 @Injectable()
 export class AuthService {
-  private logger = new Logger('AuthService.name');
+  private logger = new Logger(AuthService.name);
   constructor(
     private jwtService: JwtService,
     private usersService: UsersService,
@@ -46,8 +46,7 @@ export class AuthService {
       select: ['name', 'email', 'password'],
     });
 
-    console.log({ user });
-    this.logger.log({ user });
+    this.logger.log({ userLog: user });
 
     if (!user) {
       throw new UnauthorizedException('Invalid email or password');
