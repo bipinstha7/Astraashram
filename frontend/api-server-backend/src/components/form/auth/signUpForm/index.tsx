@@ -48,7 +48,7 @@ export default function SignUpForm(props: iAuthFormProps<iSignUp>) {
       </section>
 
       <section className={authStyles.account_text}>
-        Don&apos;t have an account?
+        Already have an account?
         <Link href="/admin/public/sign-in">Sign in</Link>
       </section>
     </div>

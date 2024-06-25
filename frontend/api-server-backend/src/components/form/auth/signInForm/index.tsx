@@ -37,7 +37,7 @@ export default function SignInForm(props: iAuthFormProps<iSignIn>) {
         />
       </section>
       <Link href="/admin/public/forgot-password" className={authStyles.forgot_password}>
-        Forgot password?
+        Forgot Password?
       </Link>
       {customError ? (
         <InputError text={customError} margin="-16px 0 4px 0" data_testid="signin-error" />
