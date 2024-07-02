@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import Badge from '../badge';
+import Badge from '../ui/badge';
 import styles from './intervalFilter.module.scss';
 import { DatePickerWithRange } from '../ui/date/date-picker-range';
 import SelectInput from '../ui/form/select';

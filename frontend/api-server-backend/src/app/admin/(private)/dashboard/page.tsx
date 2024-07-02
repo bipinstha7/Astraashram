@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import Card from '@/components/card';
+import Card from '@/components/ui/card';
 import pdfIcon from '/public/icons/pdf.svg';
 import styles from './dashboard.module.scss';
 import PDFReports from '@/components/pdfReports';

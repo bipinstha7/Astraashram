@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import Sidebar from '@/components/sidebar';
+import Drawer from '@/components/ui/drawer';
 import styles from './privateLayout.module.scss';
-import Drawer from '@/components/drawer';
 
 export default function PrivateLayout({
   children,

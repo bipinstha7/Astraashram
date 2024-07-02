@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-import TextInput from '../../textInput';
-import Button from '@/components/button';
-import InputError from '../../inputError';
+import Button from '@/components/ui/button';
 import authStyles from '../auth.module.scss';
 import { FieldErrors } from 'react-hook-form';
+import InputError from '../../ui/form/inputError';
 import eyeOpenIcon from '/public/icons/eye-open.svg';
 import eyeCloseIcon from '/public/icons/eye-close.svg';
+import TextInput from '@/components/ui/form/textInput';
 import { iSignUp } from '@/lib/interfaces/auth.interface';
 
 type errorNameType = { message: string };

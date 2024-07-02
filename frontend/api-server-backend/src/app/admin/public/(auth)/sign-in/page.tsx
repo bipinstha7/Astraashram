@@ -8,7 +8,7 @@ import useAuth from '@/lib/hooks/auth.hooks';
 import { VALIDATION_EXCEPTION } from '@/lib/constants';
 import { signInSchema } from '@/lib/schemas/auth.schema';
 import { iSignIn } from '@/lib/interfaces/auth.interface';
-import SignInForm from '@/components/form/auth/signInForm';
+import SignInForm from '@/components/auth/signInForm';
 import { iApiValidationError } from '@/lib/utils/api-requests.interface';
 
 export default function SignInPage() {

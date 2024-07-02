@@ -6,7 +6,7 @@ import * as Popover from '@radix-ui/react-popover';
 import React, { Dispatch, SetStateAction } from 'react';
 
 import Calendar from './calendar';
-import Badge from '@/components/badge';
+import Badge from '@/components/ui/badge';
 import styles from './date.module.scss';
 import CalendarIcon from '../../../../public/icons/calendar';
 

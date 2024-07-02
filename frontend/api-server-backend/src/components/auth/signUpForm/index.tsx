@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-import TextInput from '../../textInput';
+import TextInput from '../../ui/form/textInput';
 import Button from '@/components/button';
-import InputError from '../../inputError';
+import InputError from '../../ui/form/inputError';
 import authStyles from '../auth.module.scss';
 import { iAuthFormProps } from '../auth.interface';
 import eyeOpenIcon from '/public/icons/eye-open.svg';

@@ -2,11 +2,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useFormStatus } from 'react-dom';
 
-import TextInput from '../../textInput';
-import Button from '@/components/button';
-import InputError from '../../inputError';
+import Button from '@/components/ui/button';
 import authStyles from '../auth.module.scss';
+import InputError from '../../ui/form/inputError';
 import eyeOpenIcon from '/public/icons/eye-open.svg';
+import TextInput from '@/components/ui/form/textInput';
 import eyeCloseIcon from '/public/icons/eye-close.svg';
 import { iResponse } from '@/lib/interfaces/auth.interface';
 

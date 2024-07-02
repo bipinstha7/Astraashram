@@ -12,7 +12,7 @@ import {
 } from 'chart.js';
 import Image from 'next/image';
 
-import CustomChart from '../chart';
+import CustomChart from '../ui/chart';
 import passIcon from '/public/icons/pass.svg';
 import styles from './dashboardChart.module.scss';
 

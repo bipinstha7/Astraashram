@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-import TextInput from '../../textInput';
-import Button from '@/components/button';
-import InputError from '../../inputError';
+import Button from '@/components/ui/button';
 import authStyles from '../auth.module.scss';
+import TextInput from '../../ui/form/textInput';
+import InputError from '../../ui/form/inputError';
 import { iAuthFormProps } from '../auth.interface';
 import eyeOpenIcon from '/public/icons/eye-open.svg';
 import eyeCloseIcon from '/public/icons/eye-close.svg';

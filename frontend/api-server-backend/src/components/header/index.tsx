@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import Badge from '../badge';
+import Badge from '../ui/badge';
 import styles from './header.module.scss';
 import logoutIcon from '/public/icons/logout.svg';
 

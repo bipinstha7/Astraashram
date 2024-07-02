@@ -11,7 +11,7 @@ import peopleIcon from '/public/icons/people.svg';
 import walletIcon from '/public/icons/wallet.svg';
 import logo from '/public/images/logo-black.png';
 import statusUpIcon from '/public/icons/status-up.svg';
-import Badge from '../badge';
+import Badge from '../ui/badge';
 
 export default function Sidebar() {
   return (

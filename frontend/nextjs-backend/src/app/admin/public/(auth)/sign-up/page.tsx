@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { signUp } from '@/lib/actions/auth.actions';
-import SignUpForm from '@/components/form/auth/signUpForm';
+import SignUpForm from '@/components/auth/signUpForm';
 import { signUpSchema } from '@/lib/schemas/auth.schema';
 import { CUSTOM_ERROR, SOMETHING_WENT_WRONG } from '@/lib/constants';
 import { iResponse, iSignUp } from '@/lib/interfaces/auth.interface';
