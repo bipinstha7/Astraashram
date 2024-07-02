@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from './authLayout.module.scss';
 import logo from '/public/images/logo-white.png';
 
-export default function RootLayout({
+export default function PublicLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

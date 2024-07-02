@@ -1,8 +1,5 @@
 import styles from './spinner.module.scss';
 
-/**
- * @param {number} height -height of of the spinner
- */
 interface iSpinner {
   /**
    * Spinner width

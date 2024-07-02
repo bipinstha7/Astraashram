@@ -1,0 +1,27 @@
+.pdf_reports {
+  background-color: #fff;
+  border-radius: 20px;
+  margin-top: 20px;
+
+  .title {
+    padding: 16px 0 15px 24px;
+    border-bottom: 1px solid #ebeff2;
+  }
+
+  .pdfs {
+    margin-top: 22px;
+    margin-left: 22px;
+    padding-bottom: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    a {
+      gap: 10px;
+      display: flex;
+      color: #365bd3;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  }
+}

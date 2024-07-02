@@ -1,0 +1,87 @@
+@import '../../breakpoints.scss';
+
+.main {
+  display: grid;
+  grid-template-areas:
+    'sidebar header'
+    'sidebar main-content';
+
+  grid-template-columns: 249px 1fr;
+  grid-template-rows: 101px 1fr;
+  height: 100vh;
+
+  @include breakpoint(Max1000) {
+    grid-template-columns: 221px 1fr;
+  }
+
+  @include breakpoint(Max768) {
+    grid-template-areas:
+      'mobile-sidebar header'
+      'main-content main-content';
+
+    $icon-size: 40px;
+    $padding-left: 30px;
+    grid-template-columns: calc($padding-left + $icon-size) 1fr;
+  }
+
+  @include breakpoint(Max480) {
+    $icon-size: 40px;
+    $padding-left: 20px;
+    grid-template-columns: calc($padding-left + $icon-size) 1fr;
+  }
+}
+
+.aside {
+  grid-area: sidebar;
+  background-color: var(--background-color);
+
+  @include breakpoint(Max768) {
+    display: none;
+    grid-area: unset;
+  }
+}
+
+.mobile_aside {
+  display: none;
+  grid-area: unset;
+  background-color: var(--background-color);
+
+  @include breakpoint(Max768) {
+    display: block;
+    grid-area: mobile-sidebar;
+  }
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--background-color);
+  padding-left: 40px;
+
+  @include breakpoint(Max1000) {
+    padding-left: 13px;
+  }
+
+  @include breakpoint(Max768) {
+    padding-left: 30px;
+  }
+}
+
+.main_content {
+  grid-area: main-content;
+  padding-left: 40px;
+  padding-right: 32px;
+  background: var(--content-background-color);
+
+  @include breakpoint(Max1000) {
+    padding-left: 13px;
+  }
+
+  @include breakpoint(Max768) {
+    padding-left: 30px;
+  }
+
+  @include breakpoint(Max480) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

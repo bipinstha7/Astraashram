@@ -1,0 +1,19 @@
+@import '../../app/breakpoints.scss';
+
+.intervals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @include breakpoint(Max480) {
+    display: none;
+  }
+}
+
+.mobile_intervals {
+  display: none;
+
+  @include breakpoint(Max480) {
+    display: block;
+  }
+}

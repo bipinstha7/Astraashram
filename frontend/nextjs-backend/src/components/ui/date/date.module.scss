@@ -1,0 +1,71 @@
+.date_picker_range_popover_trigger {
+  border: none;
+}
+
+.date_picker_popover_content {
+  border-radius: 4px;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 20px 0px #0000001a;
+}
+
+.date_picker_month:first-child {
+  margin-right: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  border-right: 1px solid #cfcfcf;
+}
+
+.date_picker_caption {
+  padding: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date_picker_caption_label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--primary-bg-color);
+}
+
+.date_picker_head_row {
+  border-bottom: 4px solid #fff;
+}
+
+.date_picker_head_cell {
+  background-color: #f0f6f6;
+  color: var(--primary-bg-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.date_picker_day_range_start {
+  border-radius: 8px;
+  color: var(--secondary-font-color);
+  background-color: var(--primary-bg-color) !important;
+
+  &:hover {
+    background-color: var(--primary-bg-color) !important;
+  }
+}
+
+.date_picker_row {
+  border-bottom: 4px solid #fff;
+}
+
+.date_picker_day_selected {
+  background-color: var(--content-background-color);
+}
+
+.date_picker_day_today {
+  border-radius: 8px;
+  background-color: #f4f4f5;
+}
+
+.date_picker_nav_button_previous,
+.date_picker_nav_button_next {
+  color: var(--primary-bg-color);
+}

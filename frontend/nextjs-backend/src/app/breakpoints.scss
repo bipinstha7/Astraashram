@@ -3,3 +3,18 @@ $Max360: (360/16) * 1rem;
 $Max480: (480/16) * 1rem;
 $Max768: (768/16) * 1rem;
 $Max1000: (1000/16) * 1rem;
+$Max1050: (1050/16) * 1rem;
+
+$breakpoints: (
+  Max360: $Max360,
+  Max480: $Max480,
+  Max768: $Max768,
+  Max1000: $Max1000,
+  Max1050: $Max1050,
+);
+
+@mixin breakpoint($point) {
+  @media (max-width: map-get($breakpoints, $point)) {
+    @content;
+  }
+}

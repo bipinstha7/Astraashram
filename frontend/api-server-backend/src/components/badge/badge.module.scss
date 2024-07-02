@@ -1,0 +1,22 @@
+.badge {
+  --gap: 35px;
+  --padding: 13px 15px;
+  --border-radius: 20px;
+  --text-font-size: 1rem;
+  --text-font-weight: 500;
+  --background-color: #ecf7f7;
+
+  cursor: pointer;
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  background-color: var(--background-color);
+
+  .text {
+    color: var(--text-color);
+    font-size: var(--text-font-size);
+    font-weight: var(--text-font-weight);
+  }
+}

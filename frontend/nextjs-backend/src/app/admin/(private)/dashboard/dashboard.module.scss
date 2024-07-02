@@ -1,0 +1,43 @@
+@import '../../../breakpoints.scss';
+
+.dashboard_main {
+  margin: 30px 0 142px 0;
+}
+
+.dashboard_intervals_section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download_pdf {
+  display: flex;
+  gap: 10px;
+  color: var(--primary-bg-color);
+
+  @include breakpoint(Max1050) {
+    span {
+      display: none;
+    }
+  }
+
+  @include breakpoint(Max480) {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.financial_data {
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+
+  @include breakpoint(Max480) {
+    flex-direction: column;
+  }
+}
