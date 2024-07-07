@@ -1,40 +1,55 @@
+@import '../../breakpoints.scss';
+
 .chart {
-  height: 344px;
+  // height: 344px;
+  padding-bottom: 8px;
   background: #fff;
   border-radius: 20px;
 }
 
 .chart_title {
-  font-size: 1.125rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
   font-weight: 500;
+  font-size: 1.125rem;
   letter-spacing: 0.01em;
   padding: 16px 0 15px 24px;
   border-bottom: 1px solid #ebeff2;
+
+  @include breakpoint(Max480) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
 }
 
 .chart_labels {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding-left: 24px;
   margin-top: 13px;
+  font-size: 0.625rem;
 
   & > div {
     display: flex;
+    align-items: center;
     gap: 8px;
 
     div {
+      --background-color: #44af9c;
+
       width: 24px;
       height: 24px;
       border-radius: 4px;
-      background: #44af9c;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: var(--background-color);
     }
-  }
-
-  .expenses > div {
-    background: var(--error-color);
   }
 }
 

@@ -1,30 +1,29 @@
 'use client';
 
-import { Line } from 'react-chartjs-2';
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-  ChartData,
   Point,
+  Title,
+  Legend,
+  Tooltip,
+  ChartData,
+  LinearScale,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  Chart as ChartJS,
 } from 'chart.js';
-
-import styles from './chart.module.scss';
+import { Line } from 'react-chartjs-2';
 
 interface iChart {
   data: ChartData<'line', (number | Point | null)[], unknown>;
   width?: number;
   height?: number;
+  stepSize?: number;
 }
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-export default function CustomChart({ data, width, height }: iChart) {
+export default function CustomChart({ data, width, height, stepSize }: iChart) {
   const options = {
     maintainAspectRatio: false,
     responsive: true,
@@ -42,7 +41,7 @@ export default function CustomChart({ data, width, height }: iChart) {
 
         ticks: {
           // beginAtZero: true,
-          stepSize: 500,
+          stepSize: stepSize || 500,
         },
         border: {
           dash: [10, 10],

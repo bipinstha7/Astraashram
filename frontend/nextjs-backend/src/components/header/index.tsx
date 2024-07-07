@@ -3,11 +3,14 @@ import Image from 'next/image';
 import Badge from '../ui/badge';
 import styles from './header.module.scss';
 import logoutIcon from '/public/icons/logout.svg';
+import HeaderTitle from './headerTitle';
 
 export default function Header({ gridClassName }: { gridClassName: string }) {
   return (
     <header className={`${styles.header} ${gridClassName}`}>
-      <span className={styles.page_title}>Home</span>
+      <span className={styles.page_title}>
+        <HeaderTitle />
+      </span>
 
       <div className={styles.header_right}>
         <section className={styles.currency_badge}>

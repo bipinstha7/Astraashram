@@ -1,20 +1,22 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 import Badge from '../ui/badge';
+import SelectInput from '../ui/form/select';
+import pdfIcon from '/public/icons/pdf.svg';
 import styles from './intervalFilter.module.scss';
 import { DatePickerWithRange } from '../ui/date/date-picker-range';
-import SelectInput from '../ui/form/select';
 
-const intervals = [
-  { name: 'Day', value: 'day' },
-  { name: 'Week', value: 'week' },
-  { name: 'Month', value: 'month' },
-  { name: 'Year', value: 'year' },
-];
+export default function IntervalFilter({ hideDay }: { hideDay?: Boolean }) {
+  const intervals = [
+    { name: 'Week', value: 'week' },
+    { name: 'Month', value: 'month' },
+    { name: 'Year', value: 'year' },
+  ];
+  if (!hideDay) intervals.unshift({ name: 'Day', value: 'day' });
 
-export default function IntervalFilter() {
   const [selectedInterval, setSelectedInterval] = useState<{
     value: string;
     data?: {};
@@ -22,9 +24,10 @@ export default function IntervalFilter() {
   }>(intervals[0]);
 
   return (
-    <>
+    <div className={styles.intervals_section}>
       <section className={styles.mobile_intervals}>
         <SelectInput
+          hideBorder
           options={intervals}
           onSelect={data => setSelectedInterval({ value: data })}
           showValueAndPlaceholder={true}
@@ -54,6 +57,10 @@ export default function IntervalFilter() {
           dateSelected={selectedInterval.value === 'custom'}
         />
       </section>
-    </>
+      <a href="" className={styles.download_pdf}>
+        <Image src={pdfIcon} alt="pdf-icon" />
+        <span>Dowload PDF</span>
+      </a>
+    </div>
   );
 }

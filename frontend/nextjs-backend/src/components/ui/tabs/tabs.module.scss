@@ -1,0 +1,14 @@
+.tabs_root {
+  .tabs_trigger {
+    all: unset;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+    color: var(--primary-bg-color);
+    border-bottom: 2px solid #ebeff2;
+
+    &[data-state='active'] {
+      border-bottom: 1px solid var(--primary-bg-color);
+    }
+  }
+}

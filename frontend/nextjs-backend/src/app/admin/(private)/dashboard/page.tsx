@@ -1,7 +1,4 @@
-import Image from 'next/image';
-
 import Card from '@/components/ui/card';
-import pdfIcon from '/public/icons/pdf.svg';
 import styles from './dashboard.module.scss';
 import PDFReports from '@/components/pdfReports';
 import IntervalFilter from '@/components/intervalFilter';
@@ -11,13 +8,7 @@ import DashboardChart from '@/components/dashboardChart';
 export default function Dashboard() {
   return (
     <main className={styles.dashboard_main}>
-      <section className={styles.dashboard_intervals_section}>
-        <IntervalFilter />
-        <a href="" className={styles.download_pdf}>
-          <Image src={pdfIcon} alt="pdf-icon" />
-          <span>Dowload PDF</span>
-        </a>
-      </section>
+      <IntervalFilter />
       <section className={styles.financial_data}>
         <Card header="Total sales" body="$ 12 678" footer="+ 1 005" />
         <Card header="General Expenses" body="$ 5 578" footer="+ 1 005" />
@@ -30,7 +21,7 @@ export default function Dashboard() {
         />
       </section>
       <section>
-        <DashboardChart title="Sales statistics" />
+        <DashboardChart />
       </section>
       <section>
         <PDFReports />

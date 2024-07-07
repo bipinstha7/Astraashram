@@ -2,7 +2,7 @@ import * as z from 'zod';
 
 export const signInSchema = z.object({
   email: z.string().trim().toLowerCase().email(),
-  password: z.string().trim().min(1, { message: 'Password is required' }),
+  password: z.string().trim(),
 });
 
 export const signUpSchema = z.object({
@@ -20,7 +20,7 @@ export const signUpSchema = z.object({
   password: z
     .string()
     .trim()
-    .regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!.%*#?&])[A-Za-z\d@$!.%*#?&]{8,}$/, {
+    .regex(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, {
       message:
         'Must be at least 8 Characters with uppercase, lowercase, number and special characters',
     }),

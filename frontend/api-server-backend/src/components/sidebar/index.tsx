@@ -2,16 +2,27 @@ import Image from 'next/image';
 
 import styles from './sidebar.module.scss';
 
+import {
+  USERS_ROUTE,
+  OWNERS_ROUTE,
+  PRICING_ROUTE,
+  PROFILE_ROUTE,
+  EXPENSES_ROUTE,
+  PROPERTY_ROUTE,
+  DASHBOARD_ROUTE,
+  RESERVATIONS_ROUTE,
+} from '@/lib/constants';
+import Badge from '../ui/badge';
+import RouteLink from './routeLink';
 import menuIcon from '/public/icons/menu.svg';
 import cardIcon from '/public/icons/card.svg';
 import userIcon from '/public/icons/user.svg';
 import usersIcon from '/public/icons/users.svg';
 import houseIcon from '/public/icons/house.svg';
+import logo from '/public/images/logo-black.png';
 import peopleIcon from '/public/icons/people.svg';
 import walletIcon from '/public/icons/wallet.svg';
-import logo from '/public/images/logo-black.png';
-import statusUpIcon from '/public/icons/status-up.svg';
-import Badge from '../ui/badge';
+import PricingIcon from '/public/icons/pricing.tsx';
 
 export default function Sidebar() {
   return (
@@ -19,31 +30,23 @@ export default function Sidebar() {
       <Image src={logo} alt="Website logo" width={300} className={styles.logo} />
 
       <div className={styles.sidebar_list}>
-        <ul>
-          <li className={styles.active}>
-            <Image src={menuIcon} alt="home-icon" /> Home
-          </li>
-          <li>
-            <Image src={statusUpIcon} alt="pricing-icon" /> Pricing
-          </li>
-          <li>
-            <Image src={cardIcon} alt="reservations-icon" /> Reservations
-          </li>
-          <li>
-            <Image src={walletIcon} alt="expenses-icon" /> Expenses
-          </li>
-          <li>
-            <Image src={usersIcon} alt="owners-icon" /> Owners
-          </li>
-          <li>
-            <Image src={houseIcon} alt="objects-icon" /> Objects
-          </li>
-          <li>
-            <Image src={peopleIcon} alt="users-icon" /> Users
-          </li>
-        </ul>
+        <div className={styles.link_wrapper}>
+          <RouteLink route={DASHBOARD_ROUTE} icon={menuIcon} routeName="Home" />
+
+          <RouteLink route={PRICING_ROUTE} icon={<PricingIcon />} routeName="Pricing" jsx />
+
+          <RouteLink route={RESERVATIONS_ROUTE} icon={cardIcon} routeName="Reservations" />
+
+          <RouteLink route={EXPENSES_ROUTE} icon={walletIcon} routeName="Expenses" />
+
+          <RouteLink route={OWNERS_ROUTE} icon={usersIcon} routeName="Owners" />
+
+          <RouteLink route={PROPERTY_ROUTE} icon={houseIcon} routeName="Property" />
+
+          <RouteLink route={USERS_ROUTE} icon={peopleIcon} routeName="Users" />
+        </div>
         <span className={styles.profile}>
-          <Image src={userIcon} alt="my-profile-icon" /> My profile
+          <RouteLink route={PROFILE_ROUTE} icon={userIcon} routeName="My profile" />
         </span>
 
         <section className={styles.currency_badge}>

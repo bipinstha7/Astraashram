@@ -1,5 +1,13 @@
 @import '../../breakpoints.scss';
 
+.intervals_section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .intervals {
   display: flex;
   flex-wrap: wrap;
@@ -15,5 +23,24 @@
 
   @include breakpoint(Max480) {
     display: block;
+  }
+}
+
+.download_pdf {
+  display: flex;
+  gap: 10px;
+  color: var(--primary-bg-color);
+
+  @include breakpoint(Max1050) {
+    span {
+      display: none;
+    }
+  }
+
+  @include breakpoint(Max480) {
+    img {
+      width: 40px;
+      height: 40px;
+    }
   }
 }

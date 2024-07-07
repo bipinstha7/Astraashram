@@ -9,15 +9,16 @@ import hamburgerIcon from '/public/icons/hamburger.svg';
 import arrowLeftIcon from '/public/icons/arrow-left.svg';
 
 interface iDrawer {
+  icon?: string;
   children: JSX.Element;
 }
 
-export default function Drawer({ children }: iDrawer) {
+export default function Drawer({ icon, children }: iDrawer) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
         <div className={styles.hamburger_icon}>
-          <Image src={hamburgerIcon} alt="hamburger-icon" />
+          <Image src={icon || hamburgerIcon} alt={`${icon || 'hamburger'}-icon`} />
         </div>
       </Dialog.Trigger>
       <Dialog.Portal>

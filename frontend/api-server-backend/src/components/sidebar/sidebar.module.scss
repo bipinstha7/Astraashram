@@ -18,7 +18,7 @@
     border-top: var(--border-bottom);
   }
 
-  .sidebar_list ul {
+  .sidebar_list .link_wrapper {
     padding-right: 5px;
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -26,8 +26,10 @@
     border-bottom: var(--border-bottom);
   }
 
-  .sidebar_list li,
-  .profile {
+  .sidebar_list .link_wrapper a,
+  .profile a {
+    color: var(--primary-font-color);
+    text-decoration: none;
     cursor: pointer;
     display: flex;
     align-items: center;

@@ -5,25 +5,54 @@ import styles from './select.module.scss';
 import caretIcon from '/public/icons/caret.svg';
 
 interface iOptions {
-  name: string;
+  name: string | number;
   value: string;
 }
 [];
 
 interface iSelectInput {
-  selected: string;
   options: iOptions[];
-  placeholder: string;
+  placeholder?: string;
+  selected: string;
   showValueAndPlaceholder?: Boolean;
   onSelect: (value: string) => void;
+  hideBorder?: Boolean;
+  triggerStyles?: {
+    '--width'?: string;
+    '--height'?: string;
+    '--padding'?: string;
+  };
+  contentStyles?: {
+    '--content-padding'?: string;
+    '--content-item-padding'?: string;
+  };
 }
 
 export default function SelectInput(props: iSelectInput) {
-  const { options, placeholder, showValueAndPlaceholder, selected, onSelect } = props;
+  const {
+    options,
+    placeholder,
+    showValueAndPlaceholder,
+    selected,
+    onSelect,
+    hideBorder,
+    triggerStyles = {},
+    contentStyles = {},
+  } = props;
+
+  let triggerStylesData = { ...triggerStyles } as React.CSSProperties;
+  let contentStylesData = { ...contentStyles } as React.CSSProperties;
+
+  if (hideBorder)
+    triggerStylesData = { ...triggerStyles, '--box-shadow': 'none' } as React.CSSProperties;
+  contentStylesData = {
+    ...contentStyles,
+    '--content-width': triggerStyles['--width'],
+  } as React.CSSProperties;
 
   return (
     <Select.Root value={selected} onValueChange={onSelect}>
-      <Select.Trigger className={styles.select_trigger} aria-label="Food">
+      <Select.Trigger className={styles.select_trigger} aria-label="Food" style={triggerStylesData}>
         <Select.Value placeholder={placeholder}>
           {showValueAndPlaceholder ? (
             <div className={styles.show_placeholder_and_value}>
@@ -39,7 +68,11 @@ export default function SelectInput(props: iSelectInput) {
         </Select.Icon>
       </Select.Trigger>
       <Select.Portal>
-        <Select.Content className={styles.select_content} position="popper">
+        <Select.Content
+          className={styles.select_content}
+          position="popper"
+          style={contentStylesData}
+        >
           <Select.ScrollUpButton>
             <Image src={caretIcon} alt="caret-icon" />
           </Select.ScrollUpButton>
