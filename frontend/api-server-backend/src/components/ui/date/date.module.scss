@@ -1,5 +1,9 @@
-.date_picker_range_popover_trigger {
+.date_picker_popover_trigger {
+  --width: 100%;
+
   border: none;
+  all: unset;
+  width: var(--width);
 }
 
 .date_picker_popover_content {
@@ -68,4 +72,17 @@
 .date_picker_nav_button_previous,
 .date_picker_nav_button_next {
   color: var(--primary-bg-color);
+}
+
+[data-mode='single'] {
+  .date_picker_nav_button_previous {
+    position: absolute;
+    top: 20%;
+    left: 0;
+  }
+  .date_picker_nav_button_next {
+    position: absolute;
+    top: 20%;
+    right: 0;
+  }
 }

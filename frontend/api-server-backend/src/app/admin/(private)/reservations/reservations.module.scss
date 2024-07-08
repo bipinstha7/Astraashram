@@ -1,0 +1,72 @@
+@import '../../../../breakpoints.scss';
+
+.reservation_main {
+  border-radius: 20px;
+  padding: 30px 20px;
+  background-color: var(--background-color);
+
+  .reservation_header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+
+    @include breakpoint(Max768) {
+      gap: 10px;
+    }
+
+    .select_properties {
+      width: 270px;
+
+      @include breakpoint(Max1000) {
+        width: 203px;
+      }
+
+      @include breakpoint(Max768) {
+        width: 178px;
+      }
+    }
+
+    .date_picker {
+      width: 228px;
+
+      @include breakpoint(Max1000) {
+        width: 203px;
+      }
+
+      @include breakpoint(Max768) {
+        width: 178px;
+      }
+    }
+
+    .reset {
+      all: unset;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: var(--primary-bg-color);
+    }
+  }
+
+  .table_status {
+    & > div {
+      display: flex;
+      justify-content: center;
+
+      & p {
+        width: 78px;
+        height: 23px;
+        border-radius: 4px;
+        color: #fff;
+      }
+    }
+
+    &[data-status='Paid'] p {
+      background-color: #70d9c6;
+    }
+    &[data-status='Unpaid'] p {
+      background-color: #c9c9c9;
+    }
+  }
+}

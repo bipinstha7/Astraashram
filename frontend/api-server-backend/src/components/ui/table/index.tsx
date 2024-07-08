@@ -1,14 +1,6 @@
 'use client';
 
-import {
-  Row,
-  Body,
-  Cell,
-  Table,
-  Header,
-  HeaderRow,
-  HeaderCell,
-} from '@table-library/react-table-library/table';
+import { Table, ExtendedNode, TableNode } from '@table-library/react-table-library/table';
 import { useTheme } from '@table-library/react-table-library/theme';
 import { usePagination } from '@table-library/react-table-library/pagination';
 import { useCallback, useEffect, useState } from 'react';
@@ -16,25 +8,8 @@ import { useCallback, useEffect, useState } from 'react';
 import Pagination from '../pagination';
 import styles from './table.module.scss';
 
-interface iNodes {
-  id: string | number;
-  name: string;
-  one: number;
-  two: number;
-  three: number;
-  four: number;
-  five: number;
-  six: number;
-  seven: number;
-  eight: number;
-  nine: number;
-  ten: number;
-  eleven: number;
-  twelve: number;
-}
-
 interface iData {
-  nodes: iNodes[];
+  nodes: ExtendedNode<TableNode>[];
   pageInfo?: any;
 }
 
@@ -44,6 +19,7 @@ interface iParams {
 }
 
 interface iCustomTable {
+  tableData: (nodes: any[]) => JSX.Element;
   fetchData: (T: iParams) => Promise<iData>;
   tableStyles?: {
     '--header-bg-color'?: string;
@@ -54,7 +30,7 @@ interface iCustomTable {
 }
 
 export default function CustomTable(props: iCustomTable) {
-  const { tableStyles, fetchData } = props;
+  const { tableStyles, fetchData, tableData } = props;
 
   const [data, setData] = useState<iData>({
     nodes: [],
@@ -106,48 +82,9 @@ export default function CustomTable(props: iCustomTable) {
         pagination={pagination}
         className={styles.astraashram_table}
         layout={{ custom: true, horizontalScroll: true }}
+        data-first-td-bg-color={tableStyles?.['--first-td-bg-color'] ? true : false}
       >
-        {(tableList: iNodes[]) => (
-          <>
-            <Header>
-              <HeaderRow>
-                <HeaderCell>Service</HeaderCell>
-                <HeaderCell>01.01.23</HeaderCell>
-                <HeaderCell>02.01.23</HeaderCell>
-                <HeaderCell>03.01.23</HeaderCell>
-                <HeaderCell>04.01.23</HeaderCell>
-                <HeaderCell>05.01.23</HeaderCell>
-                <HeaderCell>06.01.23</HeaderCell>
-                <HeaderCell>07.01.23</HeaderCell>
-                <HeaderCell>08.01.23</HeaderCell>
-                <HeaderCell>09.01.23</HeaderCell>
-                <HeaderCell>10.01.23</HeaderCell>
-                <HeaderCell>11.01.23</HeaderCell>
-                <HeaderCell>12.01.23</HeaderCell>
-              </HeaderRow>
-            </Header>
-
-            <Body>
-              {tableList.map(item => (
-                <Row item={item} key={item.id}>
-                  <Cell>{item.name} </Cell>
-                  <Cell>{item.one}</Cell>
-                  <Cell>{item.two}</Cell>
-                  <Cell>{item.three}</Cell>
-                  <Cell>{item.four}</Cell>
-                  <Cell>{item.five}</Cell>
-                  <Cell>{item.six}</Cell>
-                  <Cell>{item.seven}</Cell>
-                  <Cell>{item.eight}</Cell>
-                  <Cell>{item.nine}</Cell>
-                  <Cell>{item.ten}</Cell>
-                  <Cell>{item.eleven}</Cell>
-                  <Cell>{item.twelve}</Cell>
-                </Row>
-              ))}
-            </Body>
-          </>
-        )}
+        {(tableList: ExtendedNode<TableNode>[]) => tableData(tableList)}
       </Table>
 
       {data.pageInfo && (

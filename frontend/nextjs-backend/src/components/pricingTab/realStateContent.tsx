@@ -1,16 +1,24 @@
 'use client';
+import {
+  Row,
+  Body,
+  Cell,
+  Header,
+  HeaderRow,
+  HeaderCell,
+} from '@table-library/react-table-library/table';
 import Image from 'next/image';
 import { useState } from 'react';
 
 import CustomTable from '../ui/table';
+import ChartWrapper from '../chartWrapper';
 import SelectInput from '../ui/form/select';
 import { pricingData } from '@/lib/mockData';
 import styles from './pricingTab.module.scss';
 import IntervalFilter from '../intervalFilter';
-import PricingIcon from '/public/icons/pricing.tsx';
 import grid3Icon from '/public/icons/grid3.svg';
 import apartment from '/public/images/apartment.png';
-import ChartWrapper from '../chartWrapper';
+import PricingIcon from '../../../public/icons/pricing';
 
 interface iTrendContent {
   propertyOptions: { name: string; value: string }[];
@@ -31,6 +39,38 @@ const labels = [
   '12.12.23',
   // null,
 ];
+const tableHeaders = [
+  'Service',
+  '01.01.23',
+  '02.01.23',
+  '03.01.23',
+  '04.01.23',
+  '05.01.23',
+  '06.01.23',
+  '07.01.23',
+  '08.01.23',
+  '09.01.23',
+  '10.01.23',
+  '11.01.23',
+  '12.01.23',
+];
+
+interface iNodes {
+  id: string | number;
+  name: string;
+  one: number;
+  two: number;
+  three: number;
+  four: number;
+  five: number;
+  six: number;
+  seven: number;
+  eight: number;
+  nine: number;
+  ten: number;
+  eleven: number;
+  twelve: number;
+}
 
 export default function RealStateContent({ propertyOptions }: iTrendContent) {
   const [property, setProperty] = useState('');
@@ -147,6 +187,37 @@ export default function RealStateContent({ propertyOptions }: iTrendContent) {
         ) : (
           <CustomTable
             fetchData={pricingData}
+            tableData={(tableList: iNodes[]) => (
+              <>
+                <Header>
+                  <HeaderRow>
+                    {tableHeaders.map(header => (
+                      <HeaderCell key={header}>{header}</HeaderCell>
+                    ))}
+                  </HeaderRow>
+                </Header>
+
+                <Body>
+                  {tableList.map(item => (
+                    <Row item={item} key={item.id}>
+                      <Cell>{item.name}</Cell>
+                      <Cell>{item.one}</Cell>
+                      <Cell>{item.two}</Cell>
+                      <Cell>{item.three}</Cell>
+                      <Cell>{item.four}</Cell>
+                      <Cell>{item.five}</Cell>
+                      <Cell>{item.six}</Cell>
+                      <Cell>{item.seven}</Cell>
+                      <Cell>{item.eight}</Cell>
+                      <Cell>{item.nine}</Cell>
+                      <Cell>{item.ten}</Cell>
+                      <Cell>{item.eleven}</Cell>
+                      <Cell>{item.twelve}</Cell>
+                    </Row>
+                  ))}
+                </Body>
+              </>
+            )}
             tableStyles={{
               '--first-td-bg-color': '#EFF4F4',
               '--first-td-font-weight': 500,

@@ -11,10 +11,13 @@ interface iBadge {
 
   customStyles?: {
     '--gap'?: string;
+    '--width'?: string;
+    '--border'?: string;
     '--padding'?: string;
     '--text-color'?: string;
     '--border-radius'?: string;
     '--text-font-size'?: string;
+    '--justify-content'?: string;
     '--background-color'?: string;
     '--text-font-weight'?: number;
   };

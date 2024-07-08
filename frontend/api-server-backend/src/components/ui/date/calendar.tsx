@@ -8,9 +8,15 @@ import styles from './date.module.scss';
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
-export default function Calendar({ showOutsideDays = true, ...props }: CalendarProps) {
+export default function Calendar({
+  showOutsideDays = true,
+  classNames = {},
+  ...props
+}: CalendarProps) {
+  console.log({ classNames });
   return (
     <DayPicker
+      data-mode={props.mode}
       showOutsideDays={showOutsideDays}
       className="astraashram_date_picker"
       classNames={{
@@ -27,6 +33,7 @@ export default function Calendar({ showOutsideDays = true, ...props }: CalendarP
         nav_button_next: styles.date_picker_nav_button_next,
         day_range_start: styles.date_picker_day_range_start,
         nav_button_previous: styles.date_picker_nav_button_previous,
+        ...classNames,
       }}
       {...props}
     />

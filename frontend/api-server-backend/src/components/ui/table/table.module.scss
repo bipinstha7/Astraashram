@@ -22,12 +22,12 @@
 
   thead > tr > th {
     font-weight: 500;
-    padding: 18px 0;
+    height: 50px;
     text-align: center;
     font-size: 0.875rem;
     border: 1px solid #acacac;
     border-left: none;
-    border-right: none;
+    border-right-color: var(--background-color);
     color: var(--primary-font-color);
     background-color: var(--header-bg-color);
   }
@@ -35,18 +35,23 @@
   thead > tr > th:first-of-type {
     text-align: start;
     padding-left: 20px;
-    background-color: var(--first-td-bg-color);
   }
 
   tbody > tr > td {
-    padding-left: 20px;
+    height: 40px;
     font-size: 0.875rem;
+    text-align: center;
     border-bottom: 1px solid #ededed;
   }
 
-  tbody > tr > td:first-of-type {
-    padding: 13px 0 13px 20px;
-    font-weight: var(--first-td-font-weight);
-    background-color: var(--first-td-bg-color);
+  &[data-first-td-bg-color='true'] {
+    tbody > tr > td:first-of-type {
+      font-weight: var(--first-td-font-weight);
+      background-color: var(--first-td-bg-color);
+    }
+
+    thead > tr > th:first-of-type {
+      background-color: var(--first-td-bg-color);
+    }
   }
 }

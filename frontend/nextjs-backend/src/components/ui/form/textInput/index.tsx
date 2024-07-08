@@ -1,23 +1,44 @@
 import Image from 'next/image';
 import InputError from '../inputError';
 import styles from './textInput.module.scss';
+import { CSSProperties } from 'react';
 
 interface iTextInput {
   name: string;
-  type: string;
+  type?: string;
   label: string;
   icon?: string;
   error?: string;
   showIcon?: Boolean;
   validation?: object;
+  iconPosition?: 'left' | 'right';
   handleIconClick?: React.MouseEventHandler<HTMLDivElement>;
+  inputStyles?: {
+    '--input-bg-color'?: string;
+    '--border-color'?: string;
+  };
 }
 
 export default function TextInput(props: iTextInput) {
-  const { name, type = 'text', label, error, showIcon, icon, handleIconClick, validation } = props;
+  const {
+    name,
+    icon,
+    label,
+    error,
+    showIcon,
+    validation,
+    type = 'text',
+    handleIconClick,
+    inputStyles = {},
+    iconPosition = 'right',
+  } = props;
   return (
     <>
-      <div className={`${styles.floating_label} ${showIcon ? styles.icon_input : ''}`}>
+      <div
+        style={inputStyles as CSSProperties}
+        className={`${styles.floating_label} ${showIcon ? styles.icon_input : ''}`}
+        data-icon-position={iconPosition}
+      >
         <input
           id={name}
           name={name}

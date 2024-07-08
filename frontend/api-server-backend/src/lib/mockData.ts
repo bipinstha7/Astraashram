@@ -1,9 +1,9 @@
-interface iPricingData {
+interface iParams {
   pageSize?: number;
   pageNumber?: number;
 }
 
-export async function pricingData(params: iPricingData) {
+export async function pricingData(params: iParams) {
   const data = [
     {
       id: 1,
@@ -143,4 +143,107 @@ export async function pricingData(params: iPricingData) {
 
   // return { nodes: paginatedData, pageInfo: { total: data.length } };
   return { nodes: paginatedData };
+}
+
+export async function reservationsData(params: iParams) {
+  const data = [
+    {
+      id: '0001',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Paid',
+    },
+    {
+      id: '0002',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Unpaid',
+    },
+    {
+      id: '0003',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Paid',
+    },
+    {
+      id: '0004',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Unpaid',
+    },
+    {
+      id: '0005',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Paid',
+    },
+    {
+      id: '0006',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Unpaid',
+    },
+    {
+      id: '0007',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Paid',
+    },
+    {
+      id: '0008',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Unpaid',
+    },
+    {
+      id: '0009',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Paid',
+    },
+    {
+      id: '0010',
+      propertyName: 'Apartment 334',
+      startDate: '01.01.2024',
+      completionDate: '01.01.2024',
+      amount: '345,00',
+      deposit: '1 000,00',
+      status: 'Unpaid',
+    },
+  ];
+
+  const { pageSize = 10, pageNumber = 1 } = params;
+
+  const startIndex = (pageNumber - 1) * pageSize;
+
+  const paginatedData = data.slice(startIndex, startIndex + pageSize);
+
+  return { nodes: paginatedData, pageInfo: { total: data.length } };
 }

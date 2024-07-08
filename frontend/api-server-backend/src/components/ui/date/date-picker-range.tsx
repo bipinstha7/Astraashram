@@ -2,13 +2,10 @@
 
 import { addDays, format } from 'date-fns';
 import { DateRange } from 'react-day-picker';
-import * as Popover from '@radix-ui/react-popover';
 import React, { Dispatch, SetStateAction } from 'react';
 
 import Calendar from './calendar';
-import Badge from '@/components/ui/badge';
-import styles from './date.module.scss';
-import CalendarIcon from '../../../../public/icons/calendar';
+import { DatePicker } from './date';
 
 interface iDatePickerWithRange {
   handleDate: Dispatch<
@@ -32,51 +29,29 @@ export function DatePickerWithRange({ handleDate, dateSelected }: iDatePickerWit
   };
 
   return (
-    <div>
-      <Popover.Root>
-        <Popover.Anchor asChild>
-          <Popover.Trigger className={styles.date_picker_range_popover_trigger}>
-            <Badge
-              dynamicIcon
-              icon={<CalendarIcon color={dateSelected ? '#fff' : undefined} />}
-              text={
-                date?.from ? (
-                  date.to ? (
-                    <>
-                      {format(date.from, 'LLL dd, y')} - {format(date.to, 'LLL dd, y')}
-                    </>
-                  ) : (
-                    format(date.from, 'LLL dd, y')
-                  )
-                ) : (
-                  'Pick a date'
-                )
-              }
-              customStyles={{
-                '--padding': '8px 16px',
-                '--border-radius': '10px',
-                '--text-font-weight': 400,
-                '--text-font-size': '0.87578rem',
-                '--text-color': dateSelected ? '#fff' : '#6E6E6E',
-                '--background-color': dateSelected ? 'var(--primary-bg-color)' : '#fff',
-              }}
-            />
-          </Popover.Trigger>
-        </Popover.Anchor>
-        <Popover.Portal>
-          <Popover.Content align="start" className={styles.date_picker_popover_content}>
-            <Calendar
-              mode="range"
-              initialFocus
-              selected={date}
-              pagedNavigation
-              numberOfMonths={2}
-              onSelect={handleSetDate}
-              defaultMonth={date?.from}
-            />
-          </Popover.Content>
-        </Popover.Portal>
-      </Popover.Root>
-    </div>
+    <DatePicker
+      dateSelected={dateSelected}
+      inputText={
+        date?.from ? (
+          date.to ? (
+            <>
+              {format(date.from, 'LLL dd, y')} - {format(date.to, 'LLL dd, y')}
+            </>
+          ) : (
+            format(date.from, 'LLL dd, y')
+          )
+        ) : (
+          'Pick a date'
+        )
+      }
+    >
+      <Calendar
+        mode="range"
+        initialFocus
+        selected={date}
+        numberOfMonths={2}
+        onSelect={handleSetDate}
+      />
+    </DatePicker>
   );
 }
