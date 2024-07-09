@@ -1,24 +1,20 @@
 'use client';
 
-import { useState } from 'react';
-import { format } from 'date-fns';
 import {
+  Row,
   Body,
   Cell,
   Header,
   HeaderCell,
   HeaderRow,
-  Row,
 } from '@table-library/react-table-library/table';
 
 import styles from './reservations.module.scss';
 import CustomTable from '@/components/ui/table';
 import { reservationsData } from '@/lib/mockData';
-import Calendar from '@/components/ui/date/calendar';
-import SelectInput from '@/components/ui/form/select';
-import { DatePicker } from '@/components/ui/date/date';
-import TextInput from '@/components/ui/form/textInput';
 import searchIcon from '/public/icons/search.svg';
+import Filter from '@/components/reservationsFilter';
+import TextInput from '@/components/ui/form/textInput';
 
 interface ireservationsData {
   id: string;
@@ -40,20 +36,7 @@ const tableHeaders = [
   'Status',
 ];
 
-const propertyOptions = [
-  { name: 'All', value: 'all' },
-  { name: 'Property 1', value: 'Property 1' },
-  { name: 'Property 2', value: 'Property 2' },
-  { name: 'Property 3', value: 'Property 3' },
-];
-
-const dateInputStyles = { inputStyles: { width: '100%', border: '1px solid #E0E0E0' } };
-
 export default function Reservation() {
-  const [property, setProperty] = useState('all');
-  const [fromDate, setFromDate] = useState<Date | undefined>(undefined);
-  const [toDate, setToDate] = useState<Date | undefined>(undefined);
-
   return (
     <main className={styles.reservation_main}>
       <TextInput
@@ -64,49 +47,7 @@ export default function Reservation() {
         label="Search by sales"
         inputStyles={{ '--input-bg-color': '#fff', '--border-color': '#CDCDCD' }}
       />
-      <section className={styles.reservation_header}>
-        <div className={styles.select_properties}>
-          <SelectInput
-            selected={property}
-            onSelect={setProperty}
-            showValueAndPlaceholder
-            options={propertyOptions}
-            triggerStyles={{ '--width': '100%' }}
-            placeholder="Real estate properties"
-          />
-        </div>
-        <div className={styles.date_picker}>
-          <DatePicker
-            {...dateInputStyles}
-            dateSelected={!!fromDate}
-            inputText={fromDate ? format(fromDate, 'LLL dd, y') : 'Start Date'}
-          >
-            <Calendar
-              mode="single"
-              initialFocus
-              selected={fromDate}
-              classNames={{ month: '' }}
-              onSelect={date => setFromDate(date)}
-            />
-          </DatePicker>
-        </div>
-        <div className={styles.date_picker}>
-          <DatePicker
-            {...dateInputStyles}
-            dateSelected={!!toDate}
-            inputText={toDate ? format(toDate, 'LLL dd, y') : 'End Date'}
-          >
-            <Calendar
-              mode="single"
-              initialFocus
-              selected={toDate}
-              classNames={{ month: '' }}
-              onSelect={date => setToDate(date)}
-            />
-          </DatePicker>
-        </div>
-        <button className={styles.reset}>Reset</button>
-      </section>
+      <Filter />
 
       <CustomTable
         fetchData={reservationsData}

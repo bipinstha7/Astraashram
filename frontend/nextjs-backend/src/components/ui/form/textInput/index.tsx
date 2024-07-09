@@ -9,6 +9,7 @@ interface iTextInput {
   label: string;
   icon?: string;
   error?: string;
+  className?: string;
   showIcon?: Boolean;
   validation?: object;
   iconPosition?: 'left' | 'right';
@@ -27,6 +28,7 @@ export default function TextInput(props: iTextInput) {
     error,
     showIcon,
     validation,
+    className = '',
     type = 'text',
     handleIconClick,
     inputStyles = {},
@@ -36,7 +38,7 @@ export default function TextInput(props: iTextInput) {
     <>
       <div
         style={inputStyles as CSSProperties}
-        className={`${styles.floating_label} ${showIcon ? styles.icon_input : ''}`}
+        className={`${styles.floating_label} ${className} ${showIcon ? styles.icon_input : ''}`}
         data-icon-position={iconPosition}
       >
         <input

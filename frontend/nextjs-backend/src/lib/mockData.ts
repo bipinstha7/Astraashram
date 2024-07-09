@@ -247,3 +247,76 @@ export async function reservationsData(params: iParams) {
 
   return { nodes: paginatedData, pageInfo: { total: data.length } };
 }
+
+export async function ownersData(params: iParams) {
+  const data = [
+    {
+      id: '0001',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0002',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0003',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0004',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0005',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0006',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0007',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0008',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0009',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+    {
+      id: '0010',
+      name: 'Bipin Shrestha',
+      telephone: '+977 9876543210',
+      email: 'bipin@shrestha.com',
+    },
+  ];
+
+  const { pageSize = 10, pageNumber = 1 } = params;
+
+  const startIndex = (pageNumber - 1) * pageSize;
+
+  const paginatedData = data.slice(startIndex, startIndex + pageSize);
+
+  return { nodes: paginatedData, pageInfo: { total: data.length } };
+}

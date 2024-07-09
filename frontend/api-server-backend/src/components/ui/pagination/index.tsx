@@ -5,6 +5,7 @@ import styles from './pagination.module.scss';
 
 interface iPagination {
   pageSize: number;
+  totalData: number;
   totalPage: number;
   currentPage: number;
   handlePageChange: (pageNumber: number) => void;
@@ -103,7 +104,7 @@ export default function Pagination(props: iPagination) {
         />
       </div>
       <p className={styles.total_page}>
-        Total <span>{props.totalPage}</span>
+        Total <span>{props.totalData}</span>
       </p>
       <div className={styles.pagination_number_wrapper}>
         <button

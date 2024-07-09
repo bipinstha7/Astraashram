@@ -5,50 +5,6 @@
   padding: 30px 20px;
   background-color: var(--background-color);
 
-  .reservation_header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-
-    @include breakpoint(Max768) {
-      gap: 10px;
-    }
-
-    .select_properties {
-      width: 270px;
-
-      @include breakpoint(Max1000) {
-        width: 203px;
-      }
-
-      @include breakpoint(Max768) {
-        width: 178px;
-      }
-    }
-
-    .date_picker {
-      width: 228px;
-
-      @include breakpoint(Max1000) {
-        width: 203px;
-      }
-
-      @include breakpoint(Max768) {
-        width: 178px;
-      }
-    }
-
-    .reset {
-      all: unset;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 0.875rem;
-      color: var(--primary-bg-color);
-    }
-  }
-
   .table_status {
     & > div {
       display: flex;

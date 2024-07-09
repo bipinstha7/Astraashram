@@ -89,6 +89,7 @@ export default function CustomTable(props: iCustomTable) {
 
       {data.pageInfo && (
         <Pagination
+          totalData={data.pageInfo.total}
           pageSize={pagination.state.size}
           currentPage={pagination.state.page}
           handlePageChange={page => pagination.fns.onSetPage(page)}
