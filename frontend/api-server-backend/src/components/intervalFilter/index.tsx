@@ -52,10 +52,12 @@ export default function IntervalFilter({ hideDay }: { hideDay?: Boolean }) {
             onClick={() => setSelectedInterval(interval)}
           />
         ))}
-        <DatePickerWithRange
-          handleDate={setSelectedInterval}
-          dateSelected={selectedInterval.value === 'custom'}
-        />
+        <div>
+          <DatePickerWithRange
+            handleDate={setSelectedInterval}
+            dateSelected={selectedInterval.value === 'custom'}
+          />
+        </div>
       </section>
       <a href="" className={styles.download_pdf}>
         <Image src={pdfIcon} alt="pdf-icon" />
