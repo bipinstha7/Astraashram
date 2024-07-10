@@ -22,7 +22,7 @@ import houseIcon from '/public/icons/house.svg';
 import logo from '/public/images/logo-black.png';
 import peopleIcon from '/public/icons/people.svg';
 import walletIcon from '/public/icons/wallet.svg';
-import PricingIcon from '/public/icons/pricing.tsx';
+import PricingIcon from '../../../public/icons/pricing';
 
 export default function Sidebar() {
   return (

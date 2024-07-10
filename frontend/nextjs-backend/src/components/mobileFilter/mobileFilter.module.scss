@@ -1,0 +1,23 @@
+.filter_wrapper {
+  padding: 26px 12px 0 20px;
+
+  h2 {
+    font-weight: 500;
+    border-bottom: 1px solid #ebeff2;
+    padding-bottom: 24px;
+  }
+
+  .children_data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .reset_text {
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: 500;
+    color: var(--primary-bg-color);
+  }
+}

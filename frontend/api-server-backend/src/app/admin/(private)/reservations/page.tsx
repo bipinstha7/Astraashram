@@ -39,15 +39,7 @@ const tableHeaders = [
 export default function Reservation() {
   return (
     <main className={styles.reservation_main}>
-      <TextInput
-        showIcon
-        name="search"
-        icon={searchIcon}
-        iconPosition="left"
-        label="Search by sales"
-        inputStyles={{ '--input-bg-color': '#fff', '--border-color': '#CDCDCD' }}
-      />
-      <Filter />
+      <Filter textLabel="Search by sales" />
 
       <CustomTable
         fetchData={reservationsData}

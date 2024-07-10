@@ -1,45 +1,84 @@
 @import '../../breakpoints.scss';
 
 .filter_wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin: 20px 0;
+  margin-bottom: 20px;
 
-  @include breakpoint(Max768) {
-    gap: 10px;
-  }
+  .search {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
 
-  .select_properties {
-    width: 270px;
-
-    @include breakpoint(Max1000) {
-      width: 203px;
+    @include breakpoint(Max400) {
+      flex-wrap: wrap-reverse;
     }
+
+    .search_input {
+      flex-grow: 1000;
+      flex-basis: 268px;
+    }
+
+    .add_button {
+      flex-grow: 1;
+      flex-basis: 150px;
+
+      @include breakpoint(Max768) {
+        flex-basis: 134px;
+      }
+    }
+  }
+  .select_wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
 
     @include breakpoint(Max768) {
-      width: 178px;
+      gap: 10px;
+    }
+
+    @include breakpoint(Max480) {
+      display: none;
+    }
+
+    .select_properties {
+      width: 270px;
+
+      @include breakpoint(Max1000) {
+        width: 203px;
+      }
+
+      @include breakpoint(Max768) {
+        width: 178px;
+      }
+    }
+
+    .date_picker {
+      width: 228px;
+
+      @include breakpoint(Max1000) {
+        width: 203px;
+      }
+
+      @include breakpoint(Max768) {
+        width: 178px;
+      }
+    }
+
+    .reset {
+      all: unset;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: var(--primary-bg-color);
     }
   }
 
-  .date_picker {
-    width: 228px;
+  .mobile_filter {
+    display: none;
 
-    @include breakpoint(Max1000) {
-      width: 203px;
+    @include breakpoint(Max480) {
+      display: flex;
     }
-
-    @include breakpoint(Max768) {
-      width: 178px;
-    }
-  }
-
-  .reset {
-    all: unset;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 0.875rem;
-    color: var(--primary-bg-color);
   }
 }

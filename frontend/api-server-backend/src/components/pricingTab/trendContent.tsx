@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import MobileFilter from './mobileFilter';
 import ChartWrapper from '../chartWrapper';
+import MobileFilter from '../mobileFilter';
 import SelectInput from '../ui/form/select';
 import styles from './pricingTab.module.scss';
 import IntervalFilter from '../intervalFilter';
@@ -120,6 +120,27 @@ export default function TrendContent({ propertyOptions }: iTrendContent) {
             </div>
             <div className={styles.mobile_chart_filter}>
               <MobileFilter>
+                <section className={styles.mobile_filter_no_of_bedrooms}>
+                  <p>Number of bedrooms</p>
+                  <div>
+                    <div>
+                      <input type="checkbox" id="any" name="Any" />
+                      <label htmlFor="any">Any</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="1" name="1" checked />
+                      <label htmlFor="1">1</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="2" name="2" />
+                      <label htmlFor="2">2</label>
+                    </div>
+                    <div>
+                      <input type="checkbox" id="3" name="3" />
+                      <label htmlFor="3">3</label>
+                    </div>
+                  </div>
+                </section>
                 <SelectInput
                   selected={district}
                   onSelect={setDistrict}

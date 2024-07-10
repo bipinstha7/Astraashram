@@ -1,20 +1,18 @@
 'use client';
 
 import {
+  Row,
   Body,
   Cell,
   Header,
-  HeaderCell,
   HeaderRow,
-  Row,
+  HeaderCell,
 } from '@table-library/react-table-library/table';
 
 import styles from './owners.module.scss';
-import Button from '@/components/ui/button';
 import { ownersData } from '@/lib/mockData';
 import CustomTable from '@/components/ui/table';
-import searchIcon from '/public/icons/search.svg';
-import TextInput from '@/components/ui/form/textInput';
+import Filter from '@/components/reservationsFilter';
 
 interface iownersData {
   id: string;
@@ -28,20 +26,7 @@ const tableHeaders = ['ID', 'Name', 'Telephone', 'E-mail'];
 export default function Owners() {
   return (
     <main className={styles.owners_main}>
-      <div className={styles.owners_filter}>
-        <TextInput
-          showIcon
-          name="search"
-          icon={searchIcon}
-          iconPosition="left"
-          label="Search by owner"
-          className={styles.search_input}
-          inputStyles={{ '--input-bg-color': '#fff', '--border-color': '#CDCDCD' }}
-        />
-        <div className={styles.add_button}>
-          <Button icon="&#43;" text="Add Owner" />
-        </div>
-      </div>
+      <Filter textLabel="Search by owner" />
       <CustomTable
         fetchData={ownersData}
         tableData={(tableList: iownersData[]) => (

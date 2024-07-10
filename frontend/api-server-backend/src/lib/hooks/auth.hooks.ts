@@ -1,9 +1,9 @@
 import { useRouter } from 'next/navigation';
 
 import { setLocalStorage } from '../helper';
+import { ASTRAASAN_DATA } from '../constants';
 import { signinUser, signupUser } from '@/lib/utils/api-requests';
 import { iAuthResponse, iSignIn, iSignUp } from '../interfaces/auth.interface';
-import { ASTRAASAN_DATA } from '../constants';
 
 export default function useAuth() {
   const router = useRouter();

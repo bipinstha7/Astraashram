@@ -1,8 +1,12 @@
 /* Default: 1000px and up */
+/* MAIN */
 $Max360: (360/16) * 1rem;
 $Max480: (480/16) * 1rem;
 $Max768: (768/16) * 1rem;
 $Max1000: (1000/16) * 1rem;
+
+/* On Condition */
+$Max400: (400/16) * 1rem;
 $Max1050: (1050/16) * 1rem;
 
 $breakpoints: (
@@ -10,6 +14,8 @@ $breakpoints: (
   Max480: $Max480,
   Max768: $Max768,
   Max1000: $Max1000,
+
+  Max400: $Max400,
   Max1050: $Max1050,
 );
 

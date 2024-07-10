@@ -1,6 +1,5 @@
 'use client';
 
-// import * as React from 'react';
 import Image from 'next/image';
 import * as Dialog from '@radix-ui/react-dialog';
 
@@ -10,15 +9,17 @@ import arrowLeftIcon from '/public/icons/arrow-left.svg';
 
 interface iDrawer {
   icon?: string;
+  title?: string;
   children: JSX.Element;
 }
 
-export default function Drawer({ icon, children }: iDrawer) {
+export default function Drawer({ icon, title, children }: iDrawer) {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
         <div className={styles.hamburger_icon}>
           <Image src={icon || hamburgerIcon} alt={`${icon || 'hamburger'}-icon`} />
+          <p>{title}</p>
         </div>
       </Dialog.Trigger>
       <Dialog.Portal>

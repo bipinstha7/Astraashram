@@ -61,9 +61,16 @@
 .hamburger_icon {
   height: 100%;
   display: flex;
+  gap: 10px;
   cursor: pointer;
   align-items: center;
   justify-content: flex-end;
+
+  p {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary-bg-color);
+  }
 }
 
 .dialog_content {
