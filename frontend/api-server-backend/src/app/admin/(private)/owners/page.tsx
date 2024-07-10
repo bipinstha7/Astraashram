@@ -12,7 +12,7 @@ import {
 import styles from './owners.module.scss';
 import { ownersData } from '@/lib/mockData';
 import CustomTable from '@/components/ui/table';
-import Filter from '@/components/reservationsFilter';
+import Filter from '@/components/reservations/reservationsFilter';
 
 interface iownersData {
   id: string;

@@ -19,7 +19,7 @@ export default function Button(props: iButton) {
       }`}
     >
       {props.icon && <span className={styles.icon}>{props.icon}</span>}
-      {props.text}
+      <p>{props.text}</p>
       {props.isSubmitting ? <Spinner /> : null}
     </button>
   );

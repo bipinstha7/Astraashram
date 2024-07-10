@@ -1,0 +1,21 @@
+.file_input {
+  cursor: pointer;
+
+  .input_wrapper {
+    display: flex;
+    gap: 4px;
+    color: #365bd3;
+    font-size: 0.875rem;
+    font-weight: 500;
+    align-items: center;
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

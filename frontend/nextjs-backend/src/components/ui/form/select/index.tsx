@@ -21,6 +21,7 @@ interface iSelectInput {
     '--width'?: string;
     '--height'?: string;
     '--padding'?: string;
+    '--background-color'?: string;
   };
   contentStyles?: {
     '--content-padding'?: string;
@@ -43,16 +44,17 @@ export default function SelectInput(props: iSelectInput) {
   let triggerStylesData = { ...triggerStyles } as React.CSSProperties;
   let contentStylesData = { ...contentStyles } as React.CSSProperties;
 
-  if (hideBorder)
+  if (hideBorder) {
     triggerStylesData = { ...triggerStyles, '--box-shadow': 'none' } as React.CSSProperties;
+  }
+
   contentStylesData = {
     ...contentStyles,
-    '--content-width': triggerStyles['--width'],
   } as React.CSSProperties;
 
   return (
     <Select.Root value={selected} onValueChange={onSelect}>
-      <Select.Trigger className={styles.select_trigger} aria-label="Food" style={triggerStylesData}>
+      <Select.Trigger className={styles.select_trigger} style={triggerStylesData}>
         <Select.Value placeholder={placeholder}>
           {showValueAndPlaceholder ? (
             <div className={styles.show_placeholder_and_value}>

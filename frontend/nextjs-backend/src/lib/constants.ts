@@ -5,7 +5,10 @@ export const SOMETHING_WENT_WRONG = 'Something went wrong. Please try again late
 /* Routes */
 export const DASHBOARD_ROUTE = '/admin/dashboard';
 export const PRICING_ROUTE = '/admin/pricing';
+
 export const RESERVATIONS_ROUTE = '/admin/reservations';
+export const ADD_RESERVATIONS_ROUTE = '/admin/reservations/add';
+
 export const EXPENSES_ROUTE = '/admin/expenses';
 export const OWNERS_ROUTE = '/admin/owners';
 export const PROPERTY_ROUTE = '/admin/property';

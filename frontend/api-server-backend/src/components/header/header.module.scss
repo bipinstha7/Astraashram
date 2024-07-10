@@ -13,6 +13,22 @@
     margin-right: auto;
     font-weight: 500;
     font-size: 1.5rem;
+
+    .header_title {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .arrow_icon {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        filter: invert(1);
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
   }
 
   .header_right {

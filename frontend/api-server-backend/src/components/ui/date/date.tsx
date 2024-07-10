@@ -14,6 +14,7 @@ interface iDatePicker {
   inputStyles?: {
     width?: string;
     border?: string;
+    padding?: string;
     justifyContent?: string;
   };
 }
@@ -28,7 +29,7 @@ export function DatePicker({ dateSelected, inputText, children, inputStyles }: i
             text={inputText}
             icon={<CalendarIcon color={dateSelected ? '#fff' : undefined} />}
             customStyles={{
-              '--padding': '8px 16px',
+              '--padding': inputStyles?.padding || '8px 16px',
               '--border': inputStyles?.border || 'none',
               '--border-radius': '10px',
               '--text-font-weight': 400,

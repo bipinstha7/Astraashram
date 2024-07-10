@@ -1,0 +1,40 @@
+@import '../../../../breakpoints.scss';
+@import '../add.module.scss';
+
+.input_wrapper {
+  flex-direction: row;
+
+  div {
+    flex-grow: 1;
+    flex-basis: 185px;
+  }
+
+  @include breakpoint(Max480) {
+    flex-wrap: wrap;
+  }
+}
+
+.calendar_input {
+  display: flex;
+  gap: 20px;
+
+  div {
+    flex-grow: 1;
+    flex-basis: 185px;
+  }
+
+  @include breakpoint(Max480) {
+    flex-wrap: wrap;
+  }
+
+  .date_input_text {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    p {
+      font-size: 0.625rem;
+      color: #9d9b9f;
+    }
+  }
+}

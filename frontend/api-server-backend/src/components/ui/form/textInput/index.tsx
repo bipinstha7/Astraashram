@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import { CSSProperties } from 'react';
+
 import InputError from '../inputError';
 import styles from './textInput.module.scss';
-import { CSSProperties } from 'react';
 
 interface iTextInput {
   name: string;
@@ -9,6 +10,7 @@ interface iTextInput {
   label: string;
   icon?: string;
   error?: string;
+  infoText?: string;
   className?: string;
   showIcon?: Boolean;
   validation?: object;
@@ -27,6 +29,7 @@ export default function TextInput(props: iTextInput) {
     label,
     error,
     showIcon,
+    infoText,
     validation,
     className = '',
     type = 'text',
@@ -56,6 +59,11 @@ export default function TextInput(props: iTextInput) {
             <Image src={icon || '/images'} alt="icon" width={24} height={24} />
           </div>
         ) : null}
+        {infoText && (
+          <div className={styles.icon}>
+            <p className={styles.info_text}>{infoText}</p>
+          </div>
+        )}
       </div>
       {error ? <InputError text={error} /> : null}
     </>

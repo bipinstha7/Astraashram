@@ -1,16 +1,18 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { format } from 'date-fns';
 
-import Button from '../ui/button';
-import TextInput from '../ui/form/textInput';
+import Button from '../../ui/button';
+import MobileFilter from '../../mobileFilter';
+import TextInput from '../../ui/form/textInput';
+import searchIcon from '/public/icons/search.svg';
 import Calendar from '@/components/ui/date/calendar';
 import SelectInput from '@/components/ui/form/select';
 import styles from './reservationsFilter.module.scss';
 import { DatePicker } from '@/components/ui/date/date';
-import searchIcon from '/public/icons/search.svg';
-import MobileFilter from '../mobileFilter';
+import { ADD_RESERVATIONS_ROUTE } from '@/lib/constants';
 
 const propertyOptions = [
   { name: 'All', value: 'all' },
@@ -44,9 +46,9 @@ export default function Filter(props: iFilter) {
           className={styles.search_input}
           inputStyles={{ '--input-bg-color': '#fff', '--border-color': '#CDCDCD' }}
         />
-        <div className={styles.add_button}>
+        <Link href={ADD_RESERVATIONS_ROUTE} className={styles.add_button}>
           <Button icon="&#43;" text="Add" />
-        </div>
+        </Link>
       </div>
 
       <div className={styles.select_wrapper}>

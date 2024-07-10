@@ -1,0 +1,32 @@
+.booking {
+  display: flex;
+  padding: 10px 10px 10px 15px;
+  border-bottom: 1px solid #ededed;
+
+  p {
+    font-size: 0.875rem;
+    width: 50%;
+  }
+}
+
+.add_doc {
+  color: var(--primary-bg-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    width: 24px;
+    height: 24px;
+    span {
+      font-size: 2rem;
+    }
+  }
+}

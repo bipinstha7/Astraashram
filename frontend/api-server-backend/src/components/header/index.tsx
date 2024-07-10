@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
 import Badge from '../ui/badge';
+import HeaderTitle from './headerTitle';
 import styles from './header.module.scss';
 import logoutIcon from '/public/icons/logout.svg';
-import HeaderTitle from './headerTitle';
 
 export default function Header({ gridClassName }: { gridClassName: string }) {
   return (

@@ -1,0 +1,25 @@
+@import '../../../../../breakpoints.scss';
+
+.add_reservation_section {
+  margin-bottom: 600px;
+  section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: var(--background-color);
+
+    h4 {
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: var(--primary-bg-color);
+    }
+  }
+
+  .save_button {
+    width: 178px;
+
+    @include breakpoint(Max480) {
+      width: 100%;
+    }
+  }
+}

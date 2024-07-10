@@ -1,4 +1,4 @@
-@import '../../breakpoints.scss';
+@import '../../../breakpoints.scss';
 
 .filter_wrapper {
   margin-bottom: 20px;
@@ -20,6 +20,7 @@
     .add_button {
       flex-grow: 1;
       flex-basis: 150px;
+      text-decoration: none;
 
       @include breakpoint(Max768) {
         flex-basis: 134px;

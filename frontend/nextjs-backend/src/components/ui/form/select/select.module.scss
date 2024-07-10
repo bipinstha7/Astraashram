@@ -3,6 +3,7 @@
   --width: 170px;
   --height: 40px;
   --padding: 0 16px;
+  --background: var(--background-color);
 
   cursor: pointer;
   display: inline-flex;
@@ -14,7 +15,7 @@
   gap: 5px;
   width: var(--width);
   height: var(--height);
-  background-color: white;
+  background-color: var(--background);
   // box-shadow: none;
   border: none;
   outline: none;
@@ -22,6 +23,10 @@
 
   &:focus {
     box-shadow: 0 0 0 2px #e0e0e0;
+  }
+  &[data-state='open'],
+  &:not([data-placeholder]) {
+    background-color: #fff;
   }
 
   .show_placeholder_and_value {
@@ -37,13 +42,12 @@
 }
 
 .select_content {
-  --content-width: 170px;
   --content-padding: 5px;
   --content-item-padding: 0 35px 0 25px;
 
   z-index: 99999; // for the select inside drawer
   margin-top: 4px;
-  width: var(--content-width);
+  width: var(--radix-select-trigger-width);
   overflow: hidden;
   background-color: white;
   border-radius: 4px;

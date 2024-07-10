@@ -12,9 +12,7 @@ import {
 import styles from './reservations.module.scss';
 import CustomTable from '@/components/ui/table';
 import { reservationsData } from '@/lib/mockData';
-import searchIcon from '/public/icons/search.svg';
-import Filter from '@/components/reservationsFilter';
-import TextInput from '@/components/ui/form/textInput';
+import Filter from '@/components/reservations/reservationsFilter';
 
 interface ireservationsData {
   id: string;

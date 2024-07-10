@@ -1,0 +1,14 @@
+@import '../add.module.scss';
+
+.document {
+  display: flex;
+  padding: 10px 10px 10px 15px;
+  border: 1px solid #ededed;
+  border-left: none;
+  border-right: none;
+
+  p {
+    width: 50%;
+    font-size: 0.875rem;
+  }
+}
